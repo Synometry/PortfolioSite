@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter');
+@import url('https://fonts.googleapis.com/css2?family=Rubik');
+* {
+    font-family: 'Inter';
+}
+body {
+    margin: 0;
+    background-color: aqua;
+}
+@keyframes header-bg-roll {
+    0% {background-position: 0% 0%;}
+    100% {background-position: 400% 0%;}
+}
+.header {
+    display: flex;
+    flex-direction: column;
+    /* filter:blur(.3px); */
+    /* background-color: rgba(255,255,255,0); */
+    background-image: url('img/colorbars_skew1.png');
+    background-size: 400%;
+    background-position: 0% 0%;
+    animation-name: header-bg-roll;
+    animation-duration: 120s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+@keyframes header-bg-roll-2 {
+    0% {background-position: 0px 0px;}
+    25% {background-position: 215px 107.5px;}
+    50% {background-position: 430px 215px;}
+    75% {background-position: 645px 322.5px;}
+    100% {background-position: 860px 430px;}
+}
+.bg-container {
+    display: flex;
+    flex-direction: column;
+    /* filter:blur(.3px); */
+    /* background-color: rgba(255,255,255,0); */
+    background-image: url('img/tiledConfetti.png');
+    background-size: 430px 430px;
+    background-position: 0% 0%;
+    animation-name: header-bg-roll-2;
+    animation-duration: 30s;
+    animation-timing-function:cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    animation-iteration-count: infinite;
+}
+.bg-container-2 {
+    backdrop-filter: blur(50px);
+
+}
+.title-container {
+    padding: 20px;
+}
+h1 {
+    font-family: 'Rubik';
+    text-transform: uppercase;
+    margin: 10px 0 0 0;
+}
+h2 {
+    font-size: 1em;
+    font-weight: 200;
+    margin: 20px 0 0 0;
+    color: rgb(17, 17, 17);
+}
+h1, h2 {
+    text-shadow: 0px 0px 50px white;
+}
+.menu-container {
+    display: flex;
+    flex-direction: row;
+    padding-left: 20px;
+    height: 65px;
+}
+.menu-option {
+    /* background-color: #22529b;
+    border: 0px solid #22529b;
+    border-radius: .5em; */
+    margin-right: 10px;
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.menu-option a {
+    padding-top: 0px;
+    text-decoration: underline 0.12em rgba(255,255,255,0);
+    text-underline-offset: 1em;
+    transition: text-decoration-color 300ms, text-underline-offset 300ms, padding-top 300ms;
+    font-family: 'Rubik';
+    font-weight: 800;
+    font-size: .8em;
+    color: white;
+}
+.menu-option a:hover {
+    padding-top: 5px;
+    text-decoration-color: rgba(255,255,255,1);
+    text-underline-offset: 0.1em;
+}
+@keyframes red-1 {
+    0% {left: 10px}
+    50% {left: 70%}
+    0% {left: 10px}
+}
+.ball-1 {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    height: 100px;
+    width: 100px;
+    border-radius: 50px;
+    background-color: red;
+    z-index: -1;
+    animation-name: red-1;
+    animation-duration: 20s;
+    animation-timing-function:cubic-bezier(0.455, 0.03, 0.515, 0.955);
+    animation-iteration-count: infinite;
+}
+@keyframes blue-2 {
+    0% {left: 10px}
+    50% {left: 50%}
+    0% {left: 10px}
+}
+.ball-2 {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 150px;
+    width: 100px;
+    background-color: blue;
+    z-index: -2;
+    animation-name: blue-2;
+    animation-duration: 40s;
+    animation-delay: 10s;
+    animation-timing-function:cubic-bezier(0.785, 0.135, 0.15, 0.86);
+    animation-iteration-count: infinite; 
+}
