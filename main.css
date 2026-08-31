@@ -36,8 +36,6 @@ body {
     100% {background-position: 3440px 860px;}
 }
 .bg-container {
-    display: flex;
-    flex-direction: column;
     /* filter:blur(.3px); */
     /* background-color: rgba(255,255,255,0); */
     background-image: url('img/tiledConfetti.png');
@@ -49,24 +47,28 @@ body {
     animation-iteration-count: infinite;
 }
 .bg-container-2 {
+    display: flex;
+    flex-direction: column;
     backdrop-filter: blur(60px);
+    -webkit-backdrop-filter: blur(60px); 
 
 }
 .title-container {
     padding: 20px;
+    background-color: rgba(255,255,255,.1);
 }
 h1 {
     font-family: 'Rubik';
     text-transform: uppercase;
     margin: 10px 0 0 0;
-    text-shadow: 0px .1px 45px gray;
+    text-shadow: 0px .1px 45px white;
 }
 h2 {
-    font-size: 1em;
+    font-size: .8em;
     font-weight: 200;
     margin: 20px 0 0 0;
     color: lightgray;
-    text-shadow: 0px .1px 15px gray;
+    text-shadow: 0px .1px 15px rgb(56, 56, 56);
 }
 .menu-container {
     display: flex;
@@ -91,49 +93,11 @@ h2 {
     transition: text-decoration-color 300ms, text-underline-offset 300ms, padding-top 300ms;
     font-family: 'Rubik';
     font-weight: 800;
-    font-size: .8em;
+    font-size: 1em;
     color: white;
 }
 .menu-option a:hover {
     padding-top: 5px;
     text-decoration-color: rgba(255,255,255,1);
     text-underline-offset: 0.1em;
-}
-@keyframes red-1 {
-    0% {left: 10px}
-    50% {left: 70%}
-    0% {left: 10px}
-}
-.ball-1 {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    height: 100px;
-    width: 100px;
-    border-radius: 50px;
-    background-color: red;
-    z-index: -1;
-    animation-name: red-1;
-    animation-duration: 20s;
-    animation-timing-function:cubic-bezier(0.455, 0.03, 0.515, 0.955);
-    animation-iteration-count: infinite;
-}
-@keyframes blue-2 {
-    0% {left: 10px}
-    50% {left: 50%}
-    0% {left: 10px}
-}
-.ball-2 {
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    height: 150px;
-    width: 100px;
-    background-color: blue;
-    z-index: -2;
-    animation-name: blue-2;
-    animation-duration: 40s;
-    animation-delay: 10s;
-    animation-timing-function:cubic-bezier(0.785, 0.135, 0.15, 0.86);
-    animation-iteration-count: infinite; 
 }
