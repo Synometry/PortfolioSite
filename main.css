@@ -26,10 +26,14 @@ body {
 }
 @keyframes header-bg-roll-2 {
     0% {background-position: 0px 0px;}
-    25% {background-position: 215px 107.5px;}
-    50% {background-position: 430px 215px;}
-    75% {background-position: 645px 322.5px;}
-    100% {background-position: 860px 430px;}
+    12.5% {background-position: 430px 107.5px;}
+    25% {background-position: 860px 215px;}
+    37.5% {background-position: 1290px 322.5px;}
+    50% {background-position: 1720px 430px;}
+    62.5% {background-position: 2150px 537.5px;}
+    75% {background-position: 2580px 645px;}
+    87.5% {background-position: 3010px 752.5px;}
+    100% {background-position: 3440px 860px;}
 }
 .bg-container {
     display: flex;
@@ -37,15 +41,15 @@ body {
     /* filter:blur(.3px); */
     /* background-color: rgba(255,255,255,0); */
     background-image: url('img/tiledConfetti.png');
-    background-size: 430px 430px;
+    background-size: 860px 860px;
     background-position: 0% 0%;
     animation-name: header-bg-roll-2;
-    animation-duration: 30s;
+    animation-duration: 120s;
     animation-timing-function:cubic-bezier(0.68, -0.55, 0.265, 1.55);
     animation-iteration-count: infinite;
 }
 .bg-container-2 {
-    backdrop-filter: blur(50px);
+    backdrop-filter: blur(60px);
 
 }
 .title-container {
@@ -55,15 +59,14 @@ h1 {
     font-family: 'Rubik';
     text-transform: uppercase;
     margin: 10px 0 0 0;
+    text-shadow: 0px .1px 45px gray;
 }
 h2 {
     font-size: 1em;
     font-weight: 200;
     margin: 20px 0 0 0;
-    color: rgb(17, 17, 17);
-}
-h1, h2 {
-    text-shadow: 0px 0px 50px white;
+    color: lightgray;
+    text-shadow: 0px .1px 15px gray;
 }
 .menu-container {
     display: flex;
