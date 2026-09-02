@@ -135,9 +135,9 @@ h1 {
     flex-direction: row;
     justify-content: center;
 }
-@media screen and (max-width: 1024px) {
-    #side-panel {
-        display: none;
+@media screen and (max-width: 900px) {
+    .project-content-container {
+        flex-direction: column;
     }
 }
 .project-info-container {

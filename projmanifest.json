@@ -2,7 +2,8 @@
     "projects": [
         {
             "Name":"Seattle Demolition Permits",
-            "Date":"2022-11-16"
+            "Date":"2022-11-16",
+            "ScreenshotUrl":"img/screenshots/screenshot_221116_demo.png"
         }
     ]
 }
