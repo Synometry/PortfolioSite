@@ -1,9 +1,14 @@
 {
-    "projects": [
-        {
-            "Name":"Seattle Demolition Permits",
-            "Date":"2022-11-16",
-            "ScreenshotUrl":"img/screenshots/screenshot_221116_demo.png"
-        }
-    ]
+    "SeattleDemolitionPermits":{
+        "name":"Seattle Demolition Permits",
+        "id":"SeattleDemolitionPermits",
+        "class":"Web Map",
+        "date":"2022-11-16",
+        "screenshotUrl":"img/screenshots/screenshot_221116_demo.png",
+        "description":[
+            "An interactive presentation of Seattle's demolition permitting, this web map is one of two projects through which I became familiar with the MapboxGL API and the City of Seattle's OpenData portal. Though this project's assigned API token sits client-side, the skillful application of Mapbox's url whitelisting functionalities prevent any opportunity for abuse.",
+            "Good user experience was maintained by my identifying and removing an unexpected race condition, a feat not to be outshined by my grappling with the challenge to design a page that assumes no standard resolution nor screen size."
+        ],
+        "liveLink":"https://synometry.github.io/JapaneseEarthquakeVis/"
+    }
 }
