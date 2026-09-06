@@ -1,5 +1,54 @@
+/**
+ * @param {Element} element
+ * @param {string} id
+ * @returns {Element}
+ **/
+function $e(element, id) { return element.querySelector(`#${id}`) }
+
+/**
+ * @param {string} id
+ * @returns {Element}
+ **/
+function $(id) { return document.getElementById(id); }
+
+/**
+ * @param {Element} element
+ * @param {string} className
+ * @returns {Element}
+ **/
+function _e(element, className) { return element.getElementsByClassName(className)[0]; }
+
+/**
+ * @param {string} className
+ * @returns {Element}
+ **/
+function _(className) { return document.getElementsByClassName(className)[0]; }
+
+function _a(className) { return document.getElementsByClassName(className); }
+
 function isObj(o) {
     return typeof o === 'object' && !Array.isArray(o) && o !== null
+}
+
+async function fetchHTML(path) {
+    try {
+        const response = await fetch(path);
+        if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+        return await response.text();
+    } catch (error) {
+        console.error(`Could not load HTML file at \'${path}\':`, error);
+    }
+}
+/**
+ * @param {string} text
+ * @returns {Element}
+ **/
+function textToHTML(text) {
+    const tempDiv = document.createElement("div");
+    tempDiv.insertAdjacentHTML("afterbegin", text);
+    result = tempDiv.firstChild;
+    tempDiv.removeChild(result);
+    return result;
 }
 
 let manifest;
@@ -27,7 +76,15 @@ async function loadProject(projectid) {
         data = man[projectid];
     } catch (error) {
         console.error("Could not load project data with id \'", projectid, "\':", error);
+        return;
     }
+    const template = await fetchHTML('template/proj_webmap');
+    let projectDiv = textToHTML(template);
+    _e(projectDiv, "project-type-text").textContent = data.class;
+    _e(projectDiv, "project-occasion-text").textContent = data.class;
+    _e(projectDiv, "project-title").textContent = data.name;
+    _e(projectDiv, "project-type-text").textContent = data.class;
+    _e(projectDiv, "project-type-text").textContent = data.class;
 }
 
 async function loadHeader() {

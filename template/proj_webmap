@@ -1,0 +1,30 @@
+<div class="project-container">
+    <div class="project-title-container">
+        <div class="project-title-context-line">
+            <p class="project-type-text project-subtitle"></p>
+            <p class="project-occasion-text project-subtitle"></p>
+        </div>
+        <div class="project-title-line">
+            <h2 class="project-title"></h2>
+            <p class="project-date-text project-subtitle"></p>
+        </div>
+        <hr>
+    </div>
+    <div class="project-preview"></div>
+    <div class="project-description-container">
+        <p class="project-description"></p>
+        <p class="project-description"></p>
+    </div>
+    <p class="project-subsection-label">Live Preview</p>
+    <div class="project-live-container">
+        <iframe class="project-live-preview" src="https://synometry.github.io/JapaneseEarthquakeVis/"></iframe>
+    </div>
+    <!-- <p class="project-subsection-label">External Links</p> -->
+    <div class="project-ext-link-line">
+        <a class="project-link-line " href="https://synometry.github.io/JapaneseEarthquakeVis/" target="_blank" rel="noopener nofollow">
+            <p>See the full project</p>
+            <div class="link-chip-spacer"></div>
+            <img src="img\CircledRArrow.svg" class="svg"/>
+        </a>
+    </div>
+</div>
