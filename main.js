@@ -1,3 +1,6 @@
+const options = { timeZone:'America/Los_Angeles', year: 'numeric', month: 'short', day: 'numeric' };
+const dateFormatter = new Intl.DateTimeFormat('en-US', options); 
+
 /**
  * @param {Element} element
  * @param {string} id
@@ -50,6 +53,21 @@ function textToHTML(text) {
     tempDiv.removeChild(result);
     return result;
 }
+/**
+ * @param {Number} num
+ * @returns {String}
+ */
+function ordSuff(num) {
+    if (num % 10 >= 4 || num % 10 === 0 || (num >= 11 && num <= 13) ) {
+        return "th";
+    } else if (num % 10 >= 3) {
+        return "rd";
+    } else if (num % 10 >= 2) {
+        return "nd";
+    } else {
+        return "st";
+    }
+}
 
 let manifest;
 
@@ -81,10 +99,26 @@ async function loadProject(projectid) {
     const template = await fetchHTML('template/proj_webmap');
     let projectDiv = textToHTML(template);
     _e(projectDiv, "project-type-text").textContent = data.class;
-    _e(projectDiv, "project-occasion-text").textContent = data.class;
+    _e(projectDiv, "project-occasion-text").textContent = data.occasion;
     _e(projectDiv, "project-title").textContent = data.name;
-    _e(projectDiv, "project-type-text").textContent = data.class;
-    _e(projectDiv, "project-type-text").textContent = data.class;
+    let pDate = new Date(`${data.date}T00:00:00-08:00`);
+    let pDateStr = dateFormatter.format(pDate);
+    let comi = pDateStr.indexOf(',');
+    let suff = ordSuff(parseInt(pDateStr.substring(comi-2, comi)));
+    pDateStr = `${pDateStr.slice(0, comi)}${suff}${pDateStr.slice(comi)}`
+    _e(projectDiv, "project-date-text").textContent = pDateStr;
+    _e(projectDiv, "project-preview-img").setAttribute("src", data.screenshotUrl);
+    let descContainer = _e(projectDiv, "project-description-container");
+    data.description.forEach((val, i, arr) => {
+        let pEl = document.createElement("p");
+        pEl.classList.add("project-description");
+        pEl.textContent = val;
+        descContainer.appendChild(pEl);
+    });
+    let liveUrl = data.liveLink;
+    _e(projectDiv, "project-live-preview").setAttribute("src", liveUrl);
+    _e(projectDiv, "project-link-line").setAttribute("href", liveUrl)
+    _("frontpage").appendChild(projectDiv);
 }
 
 async function loadHeader() {
