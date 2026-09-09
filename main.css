@@ -117,7 +117,7 @@ h1 {
     position: relative;
     padding: 0px 7.5px;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
 }
 .menu-option>a, .menu-option>p {
