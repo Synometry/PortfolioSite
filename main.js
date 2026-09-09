@@ -96,7 +96,7 @@ async function loadProject(projectid) {
         console.error("Could not load project data with id \'", projectid, "\':", error);
         return;
     }
-    const template = await fetchHTML('template/proj_webmap');
+    const template = await fetchHTML('html/proj_webmap');
     let projectDiv = textToHTML(template);
     _e(projectDiv, "project-type-text").textContent = data.class;
     _e(projectDiv, "project-occasion-text").textContent = data.occasion;
@@ -118,16 +118,25 @@ async function loadProject(projectid) {
     let liveUrl = data.liveLink;
     _e(projectDiv, "project-live-preview").setAttribute("src", liveUrl);
     _e(projectDiv, "project-link-line").setAttribute("href", liveUrl)
-    _("frontpage").appendChild(projectDiv);
+    _("content").appendChild(projectDiv);
 }
 
 async function loadHeader() {
+    const headerHTML = await fetchHTML('html/header');
     // Get html of header
     // Get list of project names
     // Eventually put the list somewhere user-accessible
+    document.body.insertAdjacentHTML("afterbegin", headerHTML);
+}
+
+async function loadFooter() {
+    const footerHTML = await fetchHTML('html/footer');
+    document.body.insertAdjacentHTML("afterend", footerHTML);
 }
 
 window.addEventListener('load', () => {
+    loadHeader();
+    loadFooter();
     params = new URLSearchParams(window.location.search);
     if (params.has('projectid')) {
         loadProject(params.get('projectid'));

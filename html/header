@@ -1,0 +1,34 @@
+<div class="header">
+    <div class="bg-container">
+        <div class="bg-container-2">
+            <div class="title-container">
+                <h1>Holden Bailey</h1>
+                <h2>Portfolio of Geographic & GIS Works</h2>
+            </div>
+            <div class="menu-container">
+                <div class="menu-option">
+                    <a href="index.html">Home</a>
+                </div>
+                <div class="menu-option">
+                    <a href="index.html">Projects</a>
+                </div>
+                <div class="menu-option">
+                    <p>Projects</p>
+                    <div class="dropdown-shell">
+                        <div class="dropdown">
+                            <div class="dropdown-item">
+                                <a href="/index.html?projectid=SeattleDemolitionPermits">Demolitions</a>
+                            </div>
+                            <div class="dropdown-item">
+                                <p>Test 2</p>
+                            </div>
+                            <div class="dropdown-item">
+                                <p>Test 3</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
