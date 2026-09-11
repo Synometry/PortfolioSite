@@ -96,7 +96,7 @@ async function loadProject(projectid) {
         console.error("Could not load project data with id \'", projectid, "\':", error);
         return;
     }
-    const template = await fetchHTML('html/proj_webmap');
+    const template = await fetchHTML('html/proj_webmap.scrap.html');
     let projectDiv = textToHTML(template);
     _e(projectDiv, "project-type-text").textContent = data.class;
     _e(projectDiv, "project-occasion-text").textContent = data.occasion;
@@ -130,7 +130,7 @@ async function loadHeader() {
 }
 
 async function loadFooter() {
-    const footerHTML = await fetchHTML('html/footer');
+    const footerHTML = await fetchHTML('html/footer.scrap.html');
     document.body.insertAdjacentHTML("afterend", footerHTML);
 }
 
