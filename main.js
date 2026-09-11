@@ -122,7 +122,7 @@ async function loadProject(projectid) {
 }
 
 async function loadHeader() {
-    const headerHTML = await fetchHTML('html/header');
+    const headerHTML = await fetchHTML('html/header.scrap.html');
     // Get html of header
     // Get list of project names
     // Eventually put the list somewhere user-accessible
